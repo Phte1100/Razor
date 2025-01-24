@@ -1,5 +1,5 @@
 ﻿@page
-@model MyApp.Namespace.RazorModel
+@model MyApp.Namespace.RazorModel 
 @{
     ViewData["Title"] = "Razor";
 
@@ -7,14 +7,14 @@
 
     var date = DateTime.Now;
 
-    bool isFriday = date.DayOfWeek == DayOfWeek.Friday;
+    bool isFriday = date.DayOfWeek == DayOfWeek.Friday; // Kollar om det är fredag
 }
 
 <div class="text-center">
     <h1>Razor</h1>
     <p><strong>Datum/klockslag:</strong> @date</p>
 
-        @if (isFriday)
+        @if (isFriday) // Kollar om det är fredag och skriver ut en text beroende på resultatet
         {
             <p>Idag är det fredag! :)</p>
         }
@@ -25,7 +25,7 @@
 
     <p><strong>Kurser jag läst:</strong></p>
     <ul>
-        @foreach (var item in classname)
+        @foreach (var item in classname) // Loopar igenom arrayen och skriver ut varje element i en lista
         {
             <li>@item</li>
         }
