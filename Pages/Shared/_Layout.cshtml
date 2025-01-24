@@ -1,0 +1,59 @@
+﻿@{
+    var date = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Razor</title>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="topnav" id="myTopnav">
+            <a class="active" asp-area="" asp-page="/Index">Razor</a>
+            <a class="hidden-link" id="v-pills-home-tab" asp-page="/Index" role="tab">Startsida</a>
+            <a class="hidden-link" id="v-pills-razor-tab" asp-page="/Razor" role="tab">Razor</a>
+            <a class="hidden-link" id="v-pills-about-tab" asp-page="/About" role="tab">Om sidan</a>
+            <p id="headerdate">Dagens datum är: @date</p>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+    <div class="layout">
+
+<div class="sidebar">
+    <ul>
+        <li><a class="nav-link" id="v-pills-home-tab" asp-page="/Index" role="tab">Startsida</a></li>
+        <li><a class="nav-link" id="v-pills-razor-tab" asp-page="/Razor" role="tab">Razor</a></li>
+        <li><a class="nav-link" id="v-pills-about-tab" asp-page="/About" role="tab">Om sidan</a></li>
+    </ul>
+</div>
+            <div class="content">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+
+    </div>
+
+  <footer>
+        <div class="footerdiv">
+           <p>Av Philip Telberg (phte1100) - Kontakta mig via e-post: <a href="mailto:phte1100@student.miun.se">phte1100@student.miun.se</a></p>
+           </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/js/topnav.js" asp-append-version="true"></script>
+</body>
+</html>
